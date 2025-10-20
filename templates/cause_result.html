@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cause List Result</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f9f9f9; color:#003366; }
+        h1 { color: #002244; }
+        .container { background: white; padding: 25px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); width: 600px; margin:auto; }
+        a { color: #003366; text-decoration: none; font-weight: bold; }
+        a:hover { text-decoration: underline; }
+        .message { font-weight: bold; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏛️ Cause List Result</h1>
+
+        {% if message %}
+        <p class="message" style="color: {% if '⚠️' in message %}red{% else %}green{% endif %};">
+            {{ message }}
+        </p>
+        {% endif %}
+
+        {% if result_file %}
+            {% set filename = result_file.split('/')[-1] %}
+            <p>📄 <a href="{{ url_for('download_file', filename=filename) }}">Download Result JSON</a></p>
+        {% endif %}
+
+        {% if not result_file %}
+            <p>No result file available.</p>
+        {% endif %}
+
+        <hr>
+        <a href="{{ url_for('index') }}">⬅️ Back to Home</a>
+    </div>
+</body>
+</html>

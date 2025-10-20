@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CNR Case Details</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f9f9f9; }
+        h1 { color: #003366; }
+        table { border-collapse: collapse; width: 80%; margin-top: 20px; }
+        td, th { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .message { margin-top: 20px; font-weight: bold; }
+        a { color: #003366; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <h1>🔍 Case Details for CNR: {{ cnr }}</h1>
+    <div class="message" style="color:{% if '⚠️' in message %}red{% else %}green{% endif %}; font-weight:bold; margin-top:15px;">
+        {% if 'CAPTCHA' in message %}
+            ⚠️ Unable to fetch details — CAPTCHA verification required.<br>
+            Please click below and enter your CNR manually on the official eCourts site.
+        {% else %}
+            {{ message|safe }}
+        {% endif %}
+    </div>
+
+    {% if details %}
+        <h3>Case Information</h3>
+        <table>
+            {% for key, value in details.items() %}
+                <tr>
+                    <th>{{ key }}</th>
+                    <td>{{ value }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+
+        <p style="margin-top:20px;">
+            📄 <a href="{{ url_for('download_file', filename=pdf_file.split('/')[-1]) }}">Download PDF</a><br>
+            🗂️ <a href="{{ url_for('download_file', filename=json_file.split('/')[-1]) }}">Download JSON</a><br>
+            🌐 <a href="{{ cnr_url }}" target="_blank">View on Official eCourts Page</a>
+        </p>
+    {% else %}
+        <p>👉 <a href="{{ cnr_url }}" target="_blank">Open Official CNR Page</a></p>
+    {% endif %}
+</body>
+</html>

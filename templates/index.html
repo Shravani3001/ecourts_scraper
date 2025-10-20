@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eCourts Cause List Downloader</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f9f9f9; }
+        h1 { color: #003366; }
+        form { background: white; padding: 20px; border-radius: 10px; width: 400px; }
+        label { display: block; margin-top: 10px; }
+        input, select { width: 100%; padding: 8px; margin-top: 5px; }
+        button { margin-top: 15px; padding: 10px; background: #003366; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background: #0055aa; }
+        .message { margin-top: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>🏛️ eCourts Cause List Downloader</h1>
+    <form method="POST" onsubmit="showCauseLoading()">
+        <label>State Name:</label>
+        <input type="text" name="state" required>
+
+        <label>District Name:</label>
+        <input type="text" name="district" required>
+
+        <label>Court Complex:</label>
+        <input type="text" name="complex_name" required>
+
+        <label>Court Name (optional):</label>
+        <input type="text" name="court_name">
+
+        <label>Case Type:</label>
+        <select name="case_type" required>
+            <option value="Civil">Civil</option>
+            <option value="Criminal">Criminal</option>
+        </select>
+
+        <label>Date (DD-MM-YYYY):</label>
+        <input type="text" name="date_input" placeholder="DD-MM-YYYY" required>
+
+        <button type="submit">Fetch Cause List</button>
+    </form>
+
+    <!-- Loading indicator for Cause list -->
+    <div id="loading-cause" style="display:none; margin-top:20px; font-weight:bold; color:#003366;">
+         ⏳ Fetching cause list... Please wait...
+    </div>
+
+    {% if message %}
+       <div class="message" style="margin-top:20px; font-weight:bold; color: {% if '⚠️' in message %}red{% else %}green{% endif %};">
+           {{ message }}
+       </div>
+
+      {% if result_file %}
+         {% set filename = result_file.split('/')[-1] %}
+         <p>📄 <a href="{{ url_for('download_file', filename=filename) }}">Download Result JSON</a></p>
+      {% endif %}
+    {% endif %}
+
+    <hr style="margin:30px 0;">
+    <h2>🔍 Fetch Case Details by CNR</h2>
+
+    <form method="POST" action="/cnr-details" onsubmit="showCnrLoading()">
+       <label>Enter CNR Number:</label>
+       <input type="text" name="cnr" placeholder="Example: MH123456789012345" required>
+       <button type="submit">Get Case Details</button>
+    </form>
+
+    <!-- Loading indicator for CNR -->
+    <div id="loading-cnr" style="display:none; margin-top:20px; font-weight:bold; color:#003366;">
+        ⏳ Fetching case details... Please wait...
+    </div>
+
+    <script>
+      function showCauseLoading() {
+        document.getElementById("loading-cause").style.display = "block";
+      }
+      function showCnrLoading() {
+       document.getElementById("loading-cnr").style.display = "block";
+      }
+    </script>
+
+</body>
+</html>
