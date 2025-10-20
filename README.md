@@ -206,11 +206,17 @@ CLI mode is **optional** — the UI and CLI share the same scraping logic, data 
 
 ---
 
-## Author
+## About Me
 
 **Shravani K**
-💼 DevOps & AI Enthusiast | Python Developer | Automation Projects
+I'm Shravani, a self-taught and project-driven DevOps engineer passionate about building scalable infrastructure and automating complex workflows.
+
+I love solving real-world problems with tools like Terraform, Ansible, Docker, Jenkins, and AWS — and I’m always learning something new to sharpen my edge in DevOps.
+
+Connect with me:
+
 🌐 GitHub: [Shravani3001](https://github.com/Shravani3001)
+
 💼 LinkedIn: [shravani3001](https://www.linkedin.com/in/shravani3001)
 
 
