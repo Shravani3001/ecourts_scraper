@@ -195,6 +195,10 @@ CLI mode is **optional** — the UI and CLI share the same scraping logic, data 
 
 ---
 
+<img width="1920" height="1080" alt="CLI_output" src="https://github.com/user-attachments/assets/ef8eb635-a606-4700-a95a-eead689dc89e" />
+
+---
+
 ## ⚠️ Notes & Limitations
 
 * eCourts website uses **CAPTCHA**, so automated access may sometimes be blocked.
@@ -215,9 +219,9 @@ I love solving real-world problems with tools like Terraform, Ansible, Docker, J
 
 Connect with me:
 
-🌐 GitHub: [Shravani3001](https://github.com/Shravani3001)
+[GitHub](https://github.com/Shravani3001)
 
-💼 LinkedIn: [shravani3001](https://www.linkedin.com/in/shravani3001)
+[LinkedIn](https://www.linkedin.com/in/shravani3001)
 
 
 ---
