@@ -183,8 +183,16 @@ CLI mode is **optional** — the UI and CLI share the same scraping logic, data 
   "Judge Name": "Hon. Justice R. Krishna"
 }
 ```
+<img width="942" height="477" alt="Cause_list" src="https://github.com/user-attachments/assets/28da03dc-0388-472e-9bd7-a993643c6ece" />
+```
 
----
+```
+<img width="820" height="509" alt="Case_details" src="https://github.com/user-attachments/assets/ae828b32-4d5e-4f5e-bcbf-add0ec522b19" />
+```
+
+```
+<img width="844" height="465" alt="Cause_list_result" src="https://github.com/user-attachments/assets/9e388588-9435-40f4-863c-82bf6a7797b2" />
+```
 
 ## ⚠️ Notes & Limitations
 
@@ -197,15 +205,13 @@ CLI mode is **optional** — the UI and CLI share the same scraping logic, data 
 
 ---
 
-
----
-
-## 👩‍💻 Author
+## Author
 
 **Shravani K**
 💼 DevOps & AI Enthusiast | Python Developer | Automation Projects
 🌐 GitHub: [Shravani3001](https://github.com/Shravani3001)
-💼 LinkedIn: [Your LinkedIn URL]
+💼 LinkedIn: [shravani3001](https://www.linkedin.com/in/shravani3001)
+
 
 ---
 
