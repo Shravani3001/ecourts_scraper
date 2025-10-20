@@ -86,7 +86,7 @@ ecourts_scraper/
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/Shravani3001/ecourts-scraper.git
+git clone https://github.com/Shravani3001/ecourts_scraper.git
 cd ecourts-scraper
 ```
 
